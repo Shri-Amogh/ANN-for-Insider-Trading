@@ -1,0 +1,101 @@
+user_id,timestamp,location,suspicious
+user_04,2025-04-01 11:47,Office Floor 3,No
+user_04,2025-04-06 16:27,Boardroom,Yes
+user_02,2025-04-01 19:38,Research Lab,Yes
+user_01,2025-04-05 21:34,Research Lab,Yes
+user_14,2025-04-02 12:00,Legal Dept,Yes
+user_06,2025-04-06 12:48,Office Floor 3,No
+user_11,2025-04-01 19:54,Boardroom,Yes
+user_12,2025-04-05 19:29,Research Lab,Yes
+user_18,2025-04-01 14:18,Boardroom,Yes
+user_20,2025-04-07 11:02,Main Entrance,No
+user_08,2025-04-07 19:55,Legal Dept,Yes
+user_04,2025-04-04 21:10,Boardroom,Yes
+user_12,2025-04-03 20:59,Research Lab,Yes
+user_03,2025-04-05 16:10,Office Floor 3,No
+user_15,2025-04-04 21:35,Research Lab,Yes
+user_08,2025-04-06 19:52,Legal Dept,Yes
+user_02,2025-04-07 20:13,Legal Dept,Yes
+user_19,2025-04-06 21:25,Boardroom,Yes
+user_15,2025-04-02 19:35,Research Lab,Yes
+user_18,2025-04-03 14:25,Boardroom,Yes
+user_12,2025-04-02 10:05,Cafeteria,No
+user_02,2025-04-07 21:50,Legal Dept,Yes
+user_14,2025-04-05 20:29,Research Lab,Yes
+user_17,2025-04-03 08:07,Research Lab,Yes
+user_18,2025-04-07 21:07,Boardroom,Yes
+user_10,2025-04-04 19:56,Research Lab,Yes
+user_09,2025-04-05 16:55,Main Entrance,No
+user_10,2025-04-07 17:23,Office Floor 3,No
+user_06,2025-04-05 16:38,Main Entrance,No
+user_11,2025-04-04 20:15,Boardroom,Yes
+user_02,2025-04-02 09:31,Research Lab,Yes
+user_03,2025-04-07 10:30,Research Lab,Yes
+user_18,2025-04-02 21:13,Boardroom,Yes
+user_18,2025-04-07 11:25,Office Floor 5,No
+user_12,2025-04-04 15:14,Office Floor 3,No
+user_03,2025-04-03 21:37,Legal Dept,Yes
+user_08,2025-04-01 21:14,Legal Dept,Yes
+user_03,2025-04-01 09:17,Office Floor 3,No
+user_16,2025-04-02 17:15,Cafeteria,No
+user_16,2025-04-07 09:27,Research Lab,Yes
+user_12,2025-04-04 08:41,Research Lab,Yes
+user_04,2025-04-01 13:06,Legal Dept,Yes
+user_08,2025-04-02 20:27,Legal Dept,Yes
+user_06,2025-04-03 09:55,Legal Dept,Yes
+user_18,2025-04-01 21:05,Legal Dept,Yes
+user_08,2025-04-02 15:25,Legal Dept,Yes
+user_02,2025-04-02 14:50,Legal Dept,Yes
+user_15,2025-04-03 16:31,Research Lab,Yes
+user_05,2025-04-02 19:47,Research Lab,Yes
+user_18,2025-04-01 08:30,Boardroom,Yes
+user_17,2025-04-07 08:54,Main Entrance,No
+user_06,2025-04-01 18:25,Office Floor 3,No
+user_04,2025-04-05 21:39,Legal Dept,Yes
+user_03,2025-04-04 17:59,Office Floor 5,No
+user_09,2025-04-02 13:25,Office Floor 5,No
+user_05,2025-04-06 15:59,Legal Dept,Yes
+user_03,2025-04-01 17:34,Main Entrance,No
+user_07,2025-04-05 20:56,Legal Dept,Yes
+user_08,2025-04-03 20:45,Research Lab,Yes
+user_10,2025-04-05 18:42,Main Entrance,No
+user_18,2025-04-03 09:16,Office Floor 3,No
+user_04,2025-04-01 10:38,Office Floor 5,No
+user_07,2025-04-06 21:54,Research Lab,Yes
+user_09,2025-04-05 08:27,Research Lab,Yes
+user_09,2025-04-01 19:16,Research Lab,Yes
+user_06,2025-04-06 14:07,Main Entrance,No
+user_03,2025-04-06 16:23,Legal Dept,Yes
+user_19,2025-04-05 19:19,Legal Dept,Yes
+user_12,2025-04-07 08:13,Office Floor 5,No
+user_08,2025-04-06 21:39,Boardroom,Yes
+user_05,2025-04-02 10:01,Cafeteria,No
+user_06,2025-04-06 14:55,Research Lab,Yes
+user_08,2025-04-03 21:24,Legal Dept,Yes
+user_02,2025-04-07 11:22,Cafeteria,No
+user_10,2025-04-07 11:42,Main Entrance,No
+user_07,2025-04-04 19:22,Boardroom,Yes
+user_17,2025-04-04 16:07,Main Entrance,No
+user_09,2025-04-02 12:38,Main Entrance,No
+user_14,2025-04-03 13:32,Boardroom,Yes
+user_04,2025-04-04 11:45,Main Entrance,No
+user_14,2025-04-01 16:47,Research Lab,Yes
+user_07,2025-04-03 18:39,Office Floor 5,No
+user_11,2025-04-06 12:42,Office Floor 5,No
+user_14,2025-04-03 12:12,Office Floor 3,No
+user_14,2025-04-06 18:39,Office Floor 3,No
+user_19,2025-04-03 08:13,Office Floor 5,No
+user_14,2025-04-07 18:28,Cafeteria,No
+user_15,2025-04-06 20:10,Research Lab,Yes
+user_03,2025-04-03 18:05,Office Floor 5,No
+user_08,2025-04-06 19:01,Legal Dept,Yes
+user_02,2025-04-02 17:04,Legal Dept,Yes
+user_15,2025-04-04 17:44,Research Lab,Yes
+user_13,2025-04-04 10:00,Research Lab,Yes
+user_04,2025-04-07 10:33,Research Lab,Yes
+user_15,2025-04-01 09:51,Office Floor 3,No
+user_15,2025-04-06 16:48,Office Floor 5,No
+user_15,2025-04-05 16:58,Legal Dept,Yes
+user_18,2025-04-04 15:48,Office Floor 5,No
+user_08,2025-04-07 16:15,Research Lab,Yes
+user_09,2025-04-04 20:17,Legal Dept,Yes
