@@ -2,18 +2,17 @@ import random
 import csv
 from datetime import datetime, timedelta
 
-# Settings
+
 NUM_TEXTS = 10000
 OUTPUT_FILE_TEXTS = "New_text.csv"
 
-# Reuse the same phone numbers as before or regenerate
+
 text_numbers = []
 while len(text_numbers) < random.randint(500, 1500):
     num = random.randint(2000000000, 9999999999)
     if num not in text_numbers:
         text_numbers.append(num)
 
-# Random timestamp generator
 def random_timestamp():
     now = datetime.now()
     days_ago = random.randint(0, 30)
@@ -22,11 +21,9 @@ def random_timestamp():
     second = random.randint(0, 59)
     return (now - timedelta(days=days_ago, hours=hour, minutes=minute, seconds=second))
 
-# Text content length
 def random_text_length():
     return random.randint(12, 700)  # very short to medium texts
 
-# Generate texts
 text_logs = []
 
 for _ in range(NUM_TEXTS):
@@ -43,10 +40,10 @@ for _ in range(NUM_TEXTS):
     }
     text_logs.append(log)
 
-# Sort by time
+
 text_logs.sort(key=lambda x: x["Timestamp"])
 
-# Save to CSV
+
 with open(OUTPUT_FILE_TEXTS, "w", newline='') as csvfile:
     fieldnames = ["Timestamp", "Sender Number", "Receiver Number", "Message Length (characters)"]
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)

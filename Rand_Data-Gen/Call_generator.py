@@ -2,7 +2,7 @@ import random
 import csv
 from datetime import datetime, timedelta
 
-# Settings
+
 NUM_CALLS = 100
 OUTPUT_FILE = "New_Call.csv"
 
@@ -13,27 +13,26 @@ while len(phone_numbers) < random.randint(100, 1200):  # 30 unique phone numbers
     if num not in phone_numbers:
         phone_numbers.append(num)
 
-# Call types
-call_types = ["Incoming", "Outgoing", "Missed"]
-call_type_weights = [0.5, 0.45, 0.05]  # Mostly incoming/outgoing, few missed
 
-# Random timestamp generator (only in the last 7 days)
+call_types = ["Incoming", "Outgoing", "Missed"]
+call_type_weights = [0.5, 0.45, 0.05]  
+
 def random_timestamp():
     now = datetime.now()
-    days_ago = random.randint(0, 6)  # within a week
+    days_ago = random.randint(0, 6) 
     random_hour = random.randint(0, 23)
     random_minute = random.randint(0, 59)
     random_second = random.randint(0, 59)
     random_time = now - timedelta(days=days_ago, hours=random_hour, minutes=random_minute, seconds=random_second)
     return random_time
 
-# Random call duration generator
+
 def random_duration(call_type):
     if call_type == "Missed":
         return 0
-    return random.randint(30, 2400)  # 30 seconds to 40 mins
+    return random.randint(30, 2400) 
 
-# Generate the call logs
+
 call_logs = []
 
 for _ in range(NUM_CALLS):
@@ -51,10 +50,10 @@ for _ in range(NUM_CALLS):
     }
     call_logs.append(log)
 
-# Sort by timestamp to simulate chronological calling
+
 call_logs.sort(key=lambda x: x["Timestamp"])
 
-# Save to CSV
+
 with open(OUTPUT_FILE, "w", newline='') as csvfile:
     fieldnames = ["Timestamp", "Caller Number", "Receiver Number", "Call Type", "Duration (seconds)"]
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)

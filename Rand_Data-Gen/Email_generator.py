@@ -2,11 +2,11 @@ import random
 import csv
 from datetime import datetime, timedelta
 
-# Settings
+
 NUM_EMAILS = 1000
 OUTPUT_FILE_EMAILS = "New_Emails.csv"
 
-# Generate a pool of random email addresses
+
 domains = [
     "company.com", "business.org", "finance.io", "techhub.net","venturecorp.com", 
     "cloudbase.org", "quantumfinance.io", "aerotechhub.net",
@@ -82,7 +82,7 @@ while len(emails) < random.randint(90,800):
     if address not in emails:
         emails.append(address)
 
-# Random timestamp generator (7 days)
+
 def random_timestamp():
     now = datetime.now()
     days_ago = random.randint(0, 30)
@@ -91,7 +91,6 @@ def random_timestamp():
     second = random.randint(0, 59)
     return (now - timedelta(days=days_ago, hours=hour, minutes=minute, seconds=second))
 
-# Subject generator (simple corporate language)
 subjects = [
     "Project Update", "Meeting Reminder", "Budget Review", "Team Sync", "Contract Discussion",
     "Weekly Report", "Client Feedback", "New Hire Onboarding", "Market Analysis", "Sales Numbers"
@@ -249,11 +248,11 @@ subjects = [
     "No Subject – Final Copy"
 ]
 
-# Email body length
-def random_body_length():
-    return random.randint(50, 500)  # characters
 
-# Generate emails
+def random_body_length():
+    return random.randint(50, 500)  
+
+
 email_logs = []
 
 for _ in range(NUM_EMAILS):
@@ -272,10 +271,10 @@ for _ in range(NUM_EMAILS):
     }
     email_logs.append(log)
 
-# Sort by time
+
 email_logs.sort(key=lambda x: x["Timestamp"])
 
-# Save to CSV
+
 with open(OUTPUT_FILE_EMAILS, "w", newline='') as csvfile:
     fieldnames = ["Timestamp", "Sender", "Receiver", "Subject", "Body Length (characters)"]
     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)

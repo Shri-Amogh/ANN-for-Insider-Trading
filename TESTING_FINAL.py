@@ -14,11 +14,11 @@ from tensorflow.keras.models import load_model
 
 
 def Test_From_data():
-    # File paths
+
     model_path = 'Model/insider_trading_model.h5'
     scaler_path = 'Model/scaler.pkl'
 
-    # Load the new data files
+
     new_email_features = pd.read_csv('New_Emails.csv', encoding='ISO-8859-1')
     new_text_features = pd.read_csv('New_Text.csv', encoding='ISO-8859-1')
     new_call_features = pd.read_csv('New_Call.csv', encoding='ISO-8859-1')
@@ -26,7 +26,7 @@ def Test_From_data():
     new_file_features = pd.read_csv('New_Files.csv', encoding='ISO-8859-1')
     df_trades = pd.read_csv('Trade_Logs.csv', encoding='ISO-8859-1')
 
-    # Preprocessing function (as previously defined)
+
     def preprocess(df, time_column, user_column, prefix):
         df[time_column] = pd.to_datetime(df[time_column])
         features = df.groupby(user_column).agg({
@@ -35,19 +35,19 @@ def Test_From_data():
         features.columns = [f'{prefix}_count', f'{prefix}_activity_duration']
         return features
 
-    # Extract features (as previously done)
+
     email_features = preprocess(new_email_features, 'Timestamp', 'Sender', 'email')
     text_features = preprocess(new_text_features, 'Timestamp', 'Sender Number', 'text')
     call_features = preprocess(new_call_features, 'Timestamp', 'Caller Number', 'call')
     badge_features = preprocess(new_badge_features, 'timestamp', 'user_id', 'badge')
     file_features = preprocess(new_file_features, 'timestamp', 'user_id', 'file')
 
-    # Trade features
+
     trade_features = df_trades.groupby('Ticker').agg({
         'Volume': 'sum'
     })
 
-    # Combine all features
+
     features = email_features.join(text_features, how='outer')\
                             .join(call_features, how='outer')\
                             .join(badge_features, how='outer')\
@@ -56,39 +56,38 @@ def Test_From_data():
 
     features = features.fillna(0)
 
-    # Ensure 'Volume' column is numeric (ignore errors if non-numeric values are present)
+
     features['Volume'] = pd.to_numeric(features['Volume'], errors='coerce')
 
-    # Create labels (Assume large profit/loss means suspicious activity)
-    features['label'] = (features['Volume'] > 100000).astype(int)  # example condition for suspicious activity
 
-    # Define X (features) and y (labels)
+    features['label'] = (features['Volume'] > 100000).astype(int) 
+
+
     X = features.drop(columns=['label'])
     y = features['label']
 
-    # Load pre-trained model and scaler
+
     if os.path.exists(model_path) and os.path.exists(scaler_path):
-        # Load pre-trained model and scaler
+
         from tensorflow.keras.models import load_model
         with open(scaler_path, 'rb') as f:
             scaler = pickle.load(f)
         
         model = load_model(model_path)
 
-        # Preprocess the data (scale it)
+
         X_scaled = scaler.transform(X)
 
-        # Make predictions
+  
         y_pred = model.predict(X_scaled)
         y_pred_classes = (y_pred > 0.000031).astype(int)
 
-        # Flatten y_pred_classes to 1D if it's 2D
+  
         y_pred_classes = y_pred_classes.flatten()
 
-        # Filter suspicious activity predictions (label = 1)
+       
         suspicious_activity = features[y_pred_classes == 1]
 
-        # Generate explanations for suspicious activities
         explanations = []
         for idx, row in suspicious_activity.iterrows():
             explanation = ""
@@ -110,7 +109,6 @@ def Test_From_data():
             else:
                 explanations.append(explanation)
 
-        # Output suspicious activity and explanations
         print(f"Total Suspicious Activities: {len(explanations)}")
         string = ""
         for explanation in explanations:
