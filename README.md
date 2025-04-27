@@ -2,6 +2,7 @@
 
 Uses Meta Data of Chat, calls , emails , batch swipes, and file accesses to detect if any suspicious activity revolving insider trading is happening. 
 
+Python 3.11.8
 
 
 Main.py 
